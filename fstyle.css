@@ -1,0 +1,22 @@
+.fcontainer{
+    border: 2px solid blue;
+    height: 600px;
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.fitem{
+    background-color: aqua;
+    border: 1px solid black;
+    margin: 12px;
+    width: 90px;
+    height: 90px;
+}
+.f1{
+    gap: 30px;
+    flex-grow: 3;
+    flex-shrink: 3;
+    order: 0;
+    align-self: flex-end;
+}
