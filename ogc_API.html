@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Example</title>
+</head>
+<body>
+    <h1>Random User Data</h1>
+    <div id="user"></div>
+</body>
+<script>
+    fetch('https://ogc-demo.k8s.ilt-dmz.iosb.fraunhofer.de/FROST-Server/v1.1/Things')
+    .then(response => response.json())
+    .then(data => {
+        const user = data.value[0];
+        const name = user.name;
+        const desc = user.description;
+        const property = user.properties.type;
+        const userDiv = document.querySelector('#user');
+        userDiv.innerHTML = `
+            <h2>${name}</h2>
+            <p><strong>Description:</strong> ${desc}</p>
+            <p><strong>Property:</strong> ${property}</p>
+         `;
+    })
+</script>
+</html>
